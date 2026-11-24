@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>81-Maktab — Samarqand shahri, Qorasuv massivasi</title>
+  <style>
+    :root {
+      --primary: #0f3d6b;
+      --primary-light: #3d6f99;
+      --accent: #f97316;
+      --white: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: #f3f4f6;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+      margin: 6px;
+    }
+    .btn-primary { background: var(--accent); color: var(--white); }
+    .btn-primary:hover { background: #e95f05; transform: translateY(-1px); }
+    .btn-white { background: var(--white); color: var(--primary); }
+    .btn-white:hover { background: var(--primary); color: var(--white); }
+    .btn-outline { background: transparent; color: var(--white); border-color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--primary); }
+
+    /* Header */
+    .header {
+      background: var(--white);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .header .container { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); letter-spacing: -0.5px; }
+    .nav { display: flex; gap: 22px; }
+    .nav a { font-weight: 500; color: var(--text); transition: color 0.2s; }
+    .nav a:hover { color: var(--primary-light); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(to bottom, rgba(15,61,107,0.85), rgba(15,61,107,0.8)),
+                  url('https://static.vecteezy.com/system/resources/previews/044/764/490/non_2x/school-icon-3d-render-concept-of-education-icon-illustration-png.png');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+      padding: 80px 0 110px;
+    }
+    .hero-sub { font-size: 1.15rem; max-width: 720px; margin: 0 auto 32px; opacity: 0.95; }
+    .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+
+    /* Stats */
+    .stats {
+      background: var(--white);
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .stats .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .stat {
+      text-align: center;
+      border-right: 1px solid var(--line);
+      padding: 0 16px;
+    }
+    .stat:last-child { border-right: none; }
+    .stat-icon { display: block; font-size: 26px; margin-bottom: 10px; }
+    .stat h3 { font-size: 1.7rem; color: var(--primary); margin-bottom: 4px; }
+    .stat p { color: var(--muted); font-size: 0.95rem; }
+
+    /* Contact */
+    .contact { padding: 56px 0; }
+    .contact h2 { text-align: center; margin-bottom: 36px; font-size: 1.7rem; color: var(--primary); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .card .icon { font-size: 26px; margin-bottom: 8px; display: block; }
+    .card strong { display: block; margin-bottom: 6px; color: var(--primary); }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+
+    /* Footer */
+    .footer {
+      background: var(--primary);
+      color: #cbd5e1;
+      padding: 30px 0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .footer a { color: var(--white); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .stats .container, .contact-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat, .stat:last-child { border-right: none; }
+    }
+    @media (max-width: 560px) {
+      .header .container { height: auto; padding: 12px 0; flex-direction: column; gap: 12px; }
+      .header .nav { flex-wrap: wrap; justify-content: center; }
+      .hero { padding: 48px 0 80px; }
+      .hero h1 { font-size: 2rem; }
+      .stats .container, .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">81-Maktab</a>
+      <nav class="nav">
+        <a href="81-Maktab%20o'quvchilari.html">O‘quvchilar</a>
+        <a href="81-Maktab%20sinifxonalari.html">Sinifxonalar</a>
+        <a href="81-Maktab%20xaqida.html">Haqida</a>
+        <a href="81-Maktab%20xaqida%20malumot.html">Malumot</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>81-Maktab</h1>
+      <p class="hero-sub">
+        Samarqand shahri, Qorasuv massivasi bilan joylashgan davlat oraliq o‘rta ta’lim maktabi.
+        Sog‘lom, zamonaviy ta’lim — barcha yarashuvchilarga.
+      </p>
+      <div class="hero-actions">
+        <a href="81-Maktab%20xaqida.html" class="btn btn-white">Haqida batafsil</a>
+        <a href="81-Maktab%20xaqida%20malumot.html" class="btn btn-outline">Batafsil ma’lumot</a>
+        <a href="81-Maktab%20o'quvchilari.html" class="btn btn-primary">O‘quvchilar</a>
+        <a href="81-Maktab%20sinifxonalari.html" class="btn btn-white">Sinifxonalar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container">
+      <div class="stat">
+        <span class="stat-icon">🎓</span>
+        <h3>4 512</h3>
+        <p>2026-yil oktabriga ko‘ra o‘quvchilar soni</p>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">🏫</span>
+        <h3>121 ta</h3>
+        <p>Sinflar (guruhlar) soni</p>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">🏢</span>
+        <h3>1 680 o‘rin</h3>
+        <p>Maktabning quviти 1 680 o‘ringa mo‘ljallangan</p>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">📅</span>
+        <h3>2021-yil mart</h3>
+        <p>Ochilgan yili</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <div class="container">
+      <h2>Batafsil ma’lumotlar &amp; Kontaktlar</h2>
+      <div class="contact-grid">
+        <div class="card">
+          <span class="icon">📍</span>
+          <strong>Manzil</strong>
+          <p>Qorasuv dahasi, Bahodir Yalangto‘sh mahallasi, 113-A uy (shuningdek, Iftixor ko‘chasi / Qorasuv tartibga solinishi).</p>
+        </div>
+        <div class="card">
+          <span class="icon">📞</span>
+          <strong>Tel</strong>
+          <p>+998 93 111 41 36</p>
+        </div>
+        <div class="card">
+          <span class="icon">👤</span>
+          <strong>Direktor</strong>
+          <p>Oloviddin Saloxiddinovich Ochilov</p>
+        </div>
+        <div class="card">
+          <span class="icon">🕘</span>
+          <strong>Ish vaqti</strong>
+          <p>Dushanba–Shanba, 08:00–17:00 (yakshanba — dam olish)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <a href="https://maps.google.com" style="color:#7dd3fc;">Qorasuv massivasi, Samarqand shahri</a>
+      <p style="margin-top:4px;">81-Maktab © 2026 — “Zamonaviy, sog‘lom ta’lim”</p>
+    </div>
+  </footer>
+
+</body>
+</html>
